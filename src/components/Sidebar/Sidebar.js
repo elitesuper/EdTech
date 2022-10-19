@@ -90,18 +90,9 @@ export default function Sidebar(props) {
   );
   var brand = (
     <div className={classes.logo}>
-      <a
-        href="#"
-        className={classNames(classes.logoLink, {
-          [classes.logoLinkRTL]: props.rtlActive,
-        })}
-        target="_blank"
-      >
-        <div className={classes.logoImage}>
-          <img src={logo} alt="logo" className={classes.img} />
-        </div>
-        {logoText}
-      </a>
+      <div className="logo-img">
+        <img src={logo} alt="logo" className={classes.img} />
+      </div>
       <div className="account-title">
         <h3>UID number</h3>
         <p style={{color:'white'}}>

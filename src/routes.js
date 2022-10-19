@@ -80,14 +80,14 @@ const dashboardRoutes = [
     component: Subscription,
     layout: "/admin",
   },
-    {
-    path: "/test",
-    name: "Test",
-    rtlName: "خرائط",
-    icon: SubscriptionsOutlinedIcon,
-    component: UserProfile,
-    layout: "/admin",
-  },
+  //   {
+  //   path: "/test",
+  //   name: "Test",
+  //   rtlName: "خرائط",
+  //   icon: SubscriptionsOutlinedIcon,
+  //   component: UserProfile,
+  //   layout: "/admin",
+  // },
 ];
 
 export default dashboardRoutes;

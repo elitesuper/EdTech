@@ -3,7 +3,23 @@
 	color: darkblue;
 }
 .account-title{
+	margin-top: 10px;
 	width: 100%;
 	text-align: center;
 	color: white;
+}
+.balance-text{
+	color: black;
+}
+.balance-text span{
+	padding-left: 1rem;
+	font-weight: 600;
+	color: darkgreen;
+}
+.logo-img{
+	display: flex;
+}
+.logo-img img{
+	margin: auto;
+	position: relative;
 }
