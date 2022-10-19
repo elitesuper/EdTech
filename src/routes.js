@@ -16,7 +16,7 @@
 
 */
 // @material-ui/icons
-import GridViewIcon from '@mui/icons-material/GridView';
+import MemoryOutlinedIcon from '@mui/icons-material/MemoryOutlined';
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
 import AccountBalanceOutlinedIcon from '@mui/icons-material/AccountBalanceOutlined';
 import AnalyticsOutlinedIcon from '@mui/icons-material/AnalyticsOutlined';
@@ -35,7 +35,7 @@ const dashboardRoutes = [
     path: "/main",
     name: "Main",
     rtlName: "لوحة القيادة",
-    icon: GridViewIcon,
+    icon: MemoryOutlinedIcon,
     component: Main,
     layout: "/admin",
   },

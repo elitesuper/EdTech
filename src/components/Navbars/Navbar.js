@@ -28,6 +28,30 @@ export default function Header(props) {
   const appBarClasses = classNames({
     [" " + classes[color]]: color,
   });
+
+  const formatdate = (data) =>{
+    if(data){
+      let value = data.toString();
+      if(value.length == 1)
+      {
+        return "0"+value
+      }
+      return value
+    }
+    return ""
+  }
+
+  const getdate = () =>{
+    const week = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+    const date = new Date();
+    const weekday = week[date.getDay()]
+    const day = formatdate(date.getDate());
+    const month = formatdate(date.getMonth() + 1);
+    const year = date.getFullYear() ? date.getFullYear().toString():"";
+    return day + "." + month + "." + year + " "+ weekday;
+  }
+
+
   return (
     <AppBar className={classes.appBar + appBarClasses}>
       <Toolbar className={classes.container}>
@@ -36,7 +60,7 @@ export default function Header(props) {
             {routeName}
           </Button>*/}
           <div>
-            <p className="date-text">{new Date().toDateString()}</p>
+            <p className="date-text">{getdate()}</p>
           </div>
         </div>
         <Hidden smDown implementation="css">

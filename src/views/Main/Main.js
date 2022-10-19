@@ -2,7 +2,11 @@ import React from 'react';
 import Web3 from 'web3';
 import {useWeb3React} from "@web3-react/core";
 import {ethers} from 'ethers';
+import {getTokenInfo} from 'erc20-token-list';
 import axios from 'axios';
+import etcimage from '../../assets/img/etc.png'
+import maticimage from '../../assets/img/matic.png'
+
 
 const bnbweb3 = new Web3('https://bsc-dataseed.binance.org/');
 const maticweb3 = new Web3('https://rpc-mainnet.maticvigil.com/');
@@ -74,22 +78,29 @@ export default function Main(){
 	return(
 		<div>
 			{/*<h5 className="balance-text">Total Amount: <span>{ethBalance === undefined ? "..." : ethBalance === null ? "Error" : `${parseFloat(formatEther(ethBalance)).toPrecision(4)}`}</span></h5>*/}
-			<h5 className="balance-text">ETH:
-				<span>{ethBalance === undefined ? "..." : ethBalance === null ? "Error" : `${parseFloat(formatEther(ethBalance)).toPrecision(4)}`}
-	            </span>
-            </h5>
-            <h5 className="balance-text">BNB:
-				<span>{bnbBalance === undefined ? "..." : bnbBalance === null ? "Error" : `${parseFloat(formatEther(bnbBalance)).toPrecision(4)}`}</span>
-            </h5>
-            <h5 className="balance-text">MATIC:
-				<span>{maticBalance === undefined ? "..." : maticBalance === null ? "Error" : `${parseFloat(formatEther(maticBalance)).toPrecision(4)}`}</span>
-            </h5>
-            <h5 className="balance-text">FTM:
-				<span>{ftmBalance === undefined ? "..." : ftmBalance === null ? "Error" : `${parseFloat(formatEther(ftmBalance)).toPrecision(4)}`}</span>
-            </h5>
-            <h5 className="balance-text">AVAX:
-				<span>{avaxBalance === undefined ? "..." : avaxBalance === null ? "Error" : `${parseFloat(formatEther(avaxBalance)).toPrecision(4)}`}</span>
-            </h5>
+			{console.log(getTokenInfo("ETH"))}
+			<div className="balance-panel">
+				<div className="balance-info">
+					<h5>Balances</h5>
+					<div className="balance-text">
+						<img src={etcimage}></img>
+						<span>{ethBalance === undefined ? "..." : ethBalance === null ? "Error" : `${parseFloat(formatEther(ethBalance)).toPrecision(4)}`}
+			            </span>
+		            </div>
+		            <div className="balance-text">
+		            	<img src={getTokenInfo("BNB").logo.src}></img>					
+		            	<span>{bnbBalance === undefined ? "..." : bnbBalance === null ? "Error" : `${parseFloat(formatEther(bnbBalance)).toPrecision(4)}`}</span>
+		            </div>
+		          	<div className="balance-text">
+		            	<img src={maticimage}></img>
+		            	<span>{maticBalance === undefined ? "..." : maticBalance === null ? "Error" : `${parseFloat(formatEther(maticBalance)).toPrecision(4)}`}</span>
+		            </div>
+		            <div className="balance-text">
+		            	<img src={getTokenInfo("FTM").logo.src}></img>
+		            	<span>{ftmBalance === undefined ? "..." : ftmBalance === null ? "Error" : `${parseFloat(formatEther(ftmBalance)).toPrecision(4)}`}</span>
+		            </div>
+				</div>
+			</div>
 		</div>
 		)
 }

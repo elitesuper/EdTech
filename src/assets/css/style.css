@@ -6,20 +6,91 @@
 	margin-top: 10px;
 	width: 100%;
 	text-align: center;
-	color: white;
+	color: black;
+}
+.account-title p{
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+.balance-panel{
+	display: flex;
+}
+.balance-info{
+	width: 30vw;
+	max-width: 300px;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	margin: auto;
+	margin-top: 30px;
+}
+.balance-info h5{
+	text-align: center;
 }
 .balance-text{
 	color: black;
+	display: flex;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	margin-left: 1rem;
 }
 .balance-text span{
 	padding-left: 1rem;
+	margin-top: auto;
+	margin-bottom: auto;
 	font-weight: 600;
 	color: darkgreen;
 }
+.balance-text img{
+	width: 30px;
+	height: 30px;
+}
 .logo-img{
 	display: flex;
+	margin-bottom: 40px;
 }
 .logo-img img{
 	margin: auto;
 	position: relative;
+	width: 50px
+}
+
+.logo-btn{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.makeStyles-background-13:after{
+	background: none !important;
+}
+
+.makeStyles-itemLink-16{
+	border: solid 2px transparent !important;
+	border-radius: 10px !important;
+}
+.makeStyles-blue-23{
+	box-shadow: none !important;
+	background-color: transparent !important;
+	border: solid 2px transparent !important;
+}
+.active .makeStyles-blue-23{
+	box-shadow: none !important;
+	background-color: transparent !important;
+	border: solid 2px black !important;
+}
+.makeStyles-blue-23:hover, .makeStyles-blue-23:focus{
+	box-shadow: none !important;
+	background-color: transparent !important;
+	border: solid 2px black !important;
+}
+
+.makeStyles-button-69{
+	background-color: white !important;
+	color: black !important;
+	text-transform: none !important;
+}
+
+.makeStyles-logo-8:after{
+	background-color: transparent;
 }

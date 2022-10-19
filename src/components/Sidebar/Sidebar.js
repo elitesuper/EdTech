@@ -11,6 +11,10 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Icon from "@material-ui/core/Icon";
+import IconButton from '@mui/material/IconButton';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
+import SpeakerGroupOutlinedIcon from '@mui/icons-material/SpeakerGroupOutlined';
 // core components
 import AdminNavbarLinks from "components/Navbars/AdminNavbarLinks.js";
 import RTLNavbarLinks from "components/Navbars/RTLNavbarLinks.js";
@@ -95,7 +99,7 @@ export default function Sidebar(props) {
       </div>
       <div className="account-title">
         <h3>UID number</h3>
-        <p style={{color:'white'}}>
+        <p style={{color:'black'}}>
           {account === undefined
             ? "..."
             : account === null
@@ -104,6 +108,21 @@ export default function Sidebar(props) {
                 account.length - 6
               )}`}
         </p>
+      </div>
+      <div>
+      </div>
+      <div className="logo-btn">
+        <IconButton aria-label="delete" size="large" sx={{padding:"5px"}}>
+          <SettingsOutlinedIcon sx={{fontSize:'40px',color:"white"}} />
+        </IconButton>
+      </div>
+      <div className="logo-btn">
+        <IconButton aria-label="delete" size="large">
+          <ChatBubbleOutlineOutlinedIcon fontSize="inherit" sx={{color:"white"}} />
+        </IconButton>
+        <IconButton aria-label="delete" size="large">
+          <SpeakerGroupOutlinedIcon fontSize="inherit" sx={{color:"white"}}/>
+        </IconButton>
       </div>
     </div>
   );
@@ -153,7 +172,7 @@ export default function Sidebar(props) {
           {image !== undefined ? (
             <div
               className={classes.background}
-              style={{ backgroundImage: "url(" + image + ")" }}
+              style={{background:"#407bff"}}
             />
           ) : null}
         </Drawer>
