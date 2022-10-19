@@ -16,66 +16,66 @@
 
 */
 // @material-ui/icons
-import Dashboard from "@material-ui/icons/Dashboard";
-import Person from "@material-ui/icons/Person";
-import LibraryBooks from "@material-ui/icons/LibraryBooks";
-import BubbleChart from "@material-ui/icons/BubbleChart";
-import LocationOn from "@material-ui/icons/LocationOn";
+import GridViewIcon from '@mui/icons-material/GridView';
+import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
+import AccountBalanceOutlinedIcon from '@mui/icons-material/AccountBalanceOutlined';
+import AnalyticsOutlinedIcon from '@mui/icons-material/AnalyticsOutlined';
+import SubscriptionsOutlinedIcon from '@mui/icons-material/SubscriptionsOutlined';
 // core components/views for Admin layout
-import DashboardPage from "views/Dashboard/Dashboard.js";
-import UserProfile from "views/UserProfile/UserProfile.js";
-import TableList from "views/TableList/TableList.js";
-import Typography from "views/Typography/Typography.js";
-import Icons from "views/Icons/Icons.js";
-import Maps from "views/Maps/Maps.js";
+import Main from "views/Main/Main.js";
+import HR from "views/HR/HR.js";
+import CRM from "views/CRM/CRM.js";
+import Finance from "views/Finance/Finance.js";
+import Analytics from "views/Analytics/Analytics.js";
+import Subscription from "views/Subscription/Subscription.js";
 
 const dashboardRoutes = [
   {
-    path: "/dashboard",
+    path: "/main",
     name: "Main",
     rtlName: "لوحة القيادة",
-    icon: Dashboard,
-    component: DashboardPage,
+    icon: GridViewIcon,
+    component: Main,
     layout: "/admin",
   },
   {
-    path: "/user",
+    path: "/hr",
     name: "HR",
     rtlName: "ملف تعريفي للمستخدم",
-    icon: Person,
-    component: UserProfile,
+    icon: PeopleOutlinedIcon,
+    component: HR,
     layout: "/admin",
   },
   {
-    path: "/table",
+    path: "/crm",
     name: "CRM",
     rtlName: "قائمة الجدول",
     icon: "content_paste",
-    component: TableList,
+    component: CRM,
     layout: "/admin",
   },
   {
-    path: "/typography",
+    path: "/finance",
     name: "Finance",
     rtlName: "طباعة",
-    icon: LibraryBooks,
-    component: Typography,
+    icon: AccountBalanceOutlinedIcon,
+    component: Finance,
     layout: "/admin",
   },
   {
-    path: "/icons",
-    name: "Anaytics",
+    path: "/analytics",
+    name: "Analytics",
     rtlName: "الرموز",
-    icon: BubbleChart,
-    component: Icons,
+    icon: AnalyticsOutlinedIcon,
+    component: Analytics,
     layout: "/admin",
   },
   {
-    path: "/maps",
+    path: "/subscription",
     name: "Subscription",
     rtlName: "خرائط",
-    icon: LocationOn,
-    component: Maps,
+    icon: SubscriptionsOutlinedIcon,
+    component: Subscription,
     layout: "/admin",
   },
 ];
