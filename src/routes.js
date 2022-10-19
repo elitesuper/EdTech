@@ -28,6 +28,8 @@ import CRM from "views/CRM/CRM.js";
 import Finance from "views/Finance/Finance.js";
 import Analytics from "views/Analytics/Analytics.js";
 import Subscription from "views/Subscription/Subscription.js";
+import UserProfile from "views/UserProfile/UserProfile.js";
+
 
 const dashboardRoutes = [
   {
@@ -76,6 +78,14 @@ const dashboardRoutes = [
     rtlName: "خرائط",
     icon: SubscriptionsOutlinedIcon,
     component: Subscription,
+    layout: "/admin",
+  },
+    {
+    path: "/test",
+    name: "Test",
+    rtlName: "خرائط",
+    icon: SubscriptionsOutlinedIcon,
+    component: UserProfile,
     layout: "/admin",
   },
 ];

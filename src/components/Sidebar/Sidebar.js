@@ -15,11 +15,18 @@ import Icon from "@material-ui/core/Icon";
 import AdminNavbarLinks from "components/Navbars/AdminNavbarLinks.js";
 import RTLNavbarLinks from "components/Navbars/RTLNavbarLinks.js";
 
+import {useWeb3React} from "@web3-react/core";
+
 import styles from "assets/jss/material-dashboard-react/components/sidebarStyle.js";
 
 const useStyles = makeStyles(styles);
 
 export default function Sidebar(props) {
+
+
+  const {account} = useWeb3React();
+
+
   const classes = useStyles();
   let location = useLocation();
   // verifies if routeName is the one active (in browser input)
@@ -84,7 +91,7 @@ export default function Sidebar(props) {
   var brand = (
     <div className={classes.logo}>
       <a
-        href="https://www.creative-tim.com?ref=mdr-sidebar"
+        href="#"
         className={classNames(classes.logoLink, {
           [classes.logoLinkRTL]: props.rtlActive,
         })}
@@ -95,6 +102,18 @@ export default function Sidebar(props) {
         </div>
         {logoText}
       </a>
+      <div className="account-title">
+        <h3>UID number</h3>
+        <p style={{color:'white'}}>
+          {account === undefined
+            ? "..."
+            : account === null
+            ? "None"
+            : `${account.substring(0, 8)}...${account.substring(
+                account.length - 6
+              )}`}
+        </p>
+      </div>
     </div>
   );
   return (

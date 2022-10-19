@@ -31,11 +31,13 @@ export default function Header(props) {
   return (
     <AppBar className={classes.appBar + appBarClasses}>
       <Toolbar className={classes.container}>
-        <div className={classes.flex}>
-          {/* Here we create navbar brand, based on route name */}
-          <Button color="transparent" href="#" className={classes.title}>
+        <div className={classes.flex} style={{display:'flex'}}>
+{/*          <Button color="transparent" href="#" className={classes.title}>
             {routeName}
-          </Button>
+          </Button>*/}
+          <div>
+            <p className="date-text">{new Date().toDateString()}</p>
+          </div>
         </div>
         <Hidden smDown implementation="css">
           {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}

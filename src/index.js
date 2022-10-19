@@ -23,14 +23,29 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Admin from "layouts/Admin.js";
 import RTL from "layouts/RTL.js";
 
+// wallet modules
+import {Web3ReactProvider} from "@web3-react/core";
+import { ethers } from "ethers";
+
+//css
 import "assets/css/material-dashboard-react.css?v=1.10.0";
+import "assets/css/style.css";
+
+function getLibrary(provider) {
+  const library = new ethers.providers.Web3Provider(provider);
+  library.pollingInterval = 8000;
+  return library;
+}
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Switch>
-      <Route path="/admin" component={Admin} />
-      <Redirect from="/" to="/admin/main" />
-    </Switch>
-  </BrowserRouter>,
+  <Web3ReactProvider getLibrary={getLibrary}>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/admin" component={Admin} />
+        <Redirect from="/" to="/admin/main" />
+      </Switch>
+    </BrowserRouter>
+  </Web3ReactProvider>
+  ,
   document.getElementById("root")
 );
