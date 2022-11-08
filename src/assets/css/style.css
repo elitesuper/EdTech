@@ -16,7 +16,7 @@
 	display: flex;
 }
 .balance-info{
-	width: 30vw;
+	width: 50vw;
 	max-width: 300px;
 	display: flex;
 	flex-direction: column;
